@@ -13,7 +13,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.project.triply.R
-import com.project.triply.databinding.FragmentTransformBinding
 import com.project.triply.databinding.ItemTransformBinding
 
 /**
@@ -24,34 +23,9 @@ import com.project.triply.databinding.ItemTransformBinding
  */
 class TransformFragment : Fragment() {
 
-    private var _binding: FragmentTransformBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    private val binding get() = _binding!!
-
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
-        val transformViewModel = ViewModelProvider(this).get(TransformViewModel::class.java)
-        _binding = FragmentTransformBinding.inflate(inflater, container, false)
-        val root: View = binding.root
-
-        val recyclerView = binding.recyclerviewTransform
-        val adapter = TransformAdapter()
-        recyclerView.adapter = adapter
-        transformViewModel.texts.observe(viewLifecycleOwner) {
-            adapter.submitList(it)
-        }
-        return root
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
 
     class TransformAdapter :
         ListAdapter<String, TransformViewHolder>(object : DiffUtil.ItemCallback<String>() {
@@ -65,21 +39,6 @@ class TransformFragment : Fragment() {
 
         private val drawables = listOf(
             R.drawable.avatar_1,
-            R.drawable.avatar_2,
-            R.drawable.avatar_3,
-            R.drawable.avatar_4,
-            R.drawable.avatar_5,
-            R.drawable.avatar_6,
-            R.drawable.avatar_7,
-            R.drawable.avatar_8,
-            R.drawable.avatar_9,
-            R.drawable.avatar_10,
-            R.drawable.avatar_11,
-            R.drawable.avatar_12,
-            R.drawable.avatar_13,
-            R.drawable.avatar_14,
-            R.drawable.avatar_15,
-            R.drawable.avatar_16,
         )
 
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TransformViewHolder {
