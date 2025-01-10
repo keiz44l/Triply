@@ -1,6 +1,8 @@
 package com.project.triply
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.android.material.snackbar.Snackbar
@@ -25,17 +27,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab?.setOnClickListener { view ->
+        /*binding.appBarMain.fab?.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                 .setAction("Action", null)
                 .setAnchorView(R.id.fab).show()
-        }
+        }*/
 
-        val navHostFragment =
+        /*val navHostFragment =
             (supportFragmentManager.findFragmentById(R.id.nav_host_fragment_content_main) as NavHostFragment?)!!
-        val navController = navHostFragment.navController
+        val navController = navHostFragment.navController*/
 
-        binding.navView?.let {
+        val intent = Intent(this, SearchActivity::class.java)
+        startActivity(intent)
+
+        /*binding.navView?.let {
             appBarConfiguration = AppBarConfiguration(
                 setOf(
                     R.id.nav_main, R.id.nav_settings
@@ -54,7 +59,7 @@ class MainActivity : AppCompatActivity() {
             )
             setupActionBarWithNavController(navController, appBarConfiguration)
             it.setupWithNavController(navController)
-        }
+        }*/
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
