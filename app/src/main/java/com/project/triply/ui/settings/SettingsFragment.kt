@@ -1,4 +1,4 @@
-package com.project.triply.ui.settings
+/*package com.project.triply.ui.settings
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,4 +39,4 @@ class SettingsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-}
+}*/
