@@ -1,4 +1,4 @@
-package com.project.triply.ui.transform
+/*package com.project.triply.ui.transform
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -60,4 +60,4 @@ class TransformFragment : Fragment() {
         val imageView: ImageView = binding.imageViewItemTransform
         val textView: TextView = binding.textViewItemTransform
     }
-}
+}*/
