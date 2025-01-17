@@ -1,9 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recyclerview_search"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.transform.TransformFragment" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp" >
+
+    <!-- Elément de décalage par rapport au haut de la page -->
+    <Space
+        android:id="@+id/space"
+        android:layout_width="0dp"
+        android:layout_height="70dp"/>
+
+    <!-- Affichage de "From" -->
+    <TextView
+        android:id="@+id/texteFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="From"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <!-- Champ de saisie du point de départ -->
+    <EditText
+        android:id="@+id/texteSaisieFrom"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter origin"
+        android:inputType="text"
+        />
+
+    <!-- Elément de séparation entre la zone de saisie du point de départ et celle de la destination -->
+    <Space
+        android:id="@+id/space2"
+        android:layout_width="0dp"
+        android:layout_height="5dp"/>
+
+    <!-- Affichage de "To" -->
+    <TextView
+        android:id="@+id/texteTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="To"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+
+    <!-- Champ de saisie de la destination -->
+    <EditText
+        android:id="@+id/texteSaisieTo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter destination"
+        android:inputType="text"
+        />
+
+    <!-- Bloc contenant une oîte à cocher pour préciser si un retour est prévu ou non
+    et un bouton permettant d'afficher les préférences -->
+    <include
+        android:id="@+id/side_by_side_elements"
+        layout="@layout/side_by_side_elements" />
+
+    <!-- Bloc contenant un élément contenant la date du départ et l'intitulé "Return"
+    et Elément contenant la date du départ et l'intitulé "Departure" -->
+    <include
+        android:id="@+id/dates"
+        layout="@layout/dates" />
+
+    <!-- Bloc contenant un bouton de validation et permettant de le centrer -->
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="0dp"
+        android:gravity="center">
+
+        <!-- Bouton de validation de la sélection -->
+        <Button
+            android:id="@+id/boutonValider"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Validate" />
+    </LinearLayout>
+
+    <!-- ####################################################### -->
+    <!-- ############# Elément de test (à retirer) ############# -->
+    <!-- ####################################################### -->
+    <TextView
+        android:id="@+id/texteAffiche"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Texte affiché ici"
+        android:textSize="18sp"
+        android:paddingTop="16dp" />
+    <!-- ######################################################## -->
+    <!-- ######################################################## -->
+
+</LinearLayout>
