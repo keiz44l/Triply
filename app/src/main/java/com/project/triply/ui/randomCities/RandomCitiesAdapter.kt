@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.project.triply.R
 import com.project.triply.ui.randomCities.RandomCitiesModel
+import kotlin.math.min
 
 class RandomCitiesAdapter(
     private val fragment: androidx.fragment.app.Fragment,
@@ -19,9 +20,8 @@ class RandomCitiesAdapter(
 
 
     class ViewHolder (view: View) : RecyclerView.ViewHolder(view){
-        val citiesImage = view.findViewById<ImageView>(R.id.cities_image)
-        val citiesText = view.findViewById<TextView>(R.id.cities_text)
-
+        val citiesImage: ImageView = view.findViewById<ImageView>(R.id.cities_image)
+        val citiesText: TextView = view.findViewById<TextView>(R.id.cities_text)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -30,8 +30,8 @@ class RandomCitiesAdapter(
         return ViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return 4
+    override fun getItemCount(): Int{
+        return min(citiesList.size, 4) // afficher 4
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
