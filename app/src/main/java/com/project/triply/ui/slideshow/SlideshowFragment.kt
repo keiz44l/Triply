@@ -1,4 +1,4 @@
-package com.project.triply.ui.slideshow
+/*package com.project.triply.ui.slideshow
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -39,4 +39,4 @@ class SlideshowFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-}
+}*/
