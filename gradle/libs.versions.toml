@@ -20,6 +20,9 @@ navigationUiKtx = "2.6.0"
 activity = "1.9.3"
 retrofit = "2.9.0"
 volley = "1.2.1"
+filamentAndroid = "1.17.1"
+uiAndroid = "1.7.8"
+media3CommonKtx = "1.5.1"
 
 [libraries]
 androidx-appcompat-v170 = { module = "androidx.appcompat:appcompat", version.ref = "appcompatVersion" }
@@ -41,6 +44,10 @@ androidx-activity = { group = "androidx.activity", name = "activity", version.re
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 volley = { module = "com.android.volley:volley", version.ref = "volley" }
 material-v190 = { module = "com.google.android.material:material", version.ref = "materialVersion" }
+androidx-cardview = "androidx.cardview:cardview:1.0.0"
+filament-android = { group = "com.google.ar.sceneform", name = "filament-android", version.ref = "filamentAndroid" }
+androidx-ui-android = { group = "androidx.compose.ui", name = "ui-android", version.ref = "uiAndroid" }
+androidx-media3-common-ktx = { group = "androidx.media3", name = "media3-common-ktx", version.ref = "media3CommonKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

@@ -1,4 +1,8 @@
 package com.project.triply.models.api
+import android.os.Build
+import androidx.annotation.RequiresApi
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
 
 data class FlixbusResponse(
     val response_uuid: String,
@@ -33,8 +37,16 @@ data class TripResult(
 data class StationInfo(
     val date: String,
     val city_id: String,
-    val station_id: String
-)
+    val station_id: String,
+) {val time: String
+    @RequiresApi(Build.VERSION_CODES.O)
+    get() {
+        val dateTime = ZonedDateTime.parse(date) // Parse la chaîne ISO 8601
+        val formatter = DateTimeFormatter.ofPattern("HH:mm") // Format pour l'heure
+        return dateTime.format(formatter) // Retourne l'heure au format HH:mm
+    }
+
+}
 
 data class Duration(
     val hours: Int,
