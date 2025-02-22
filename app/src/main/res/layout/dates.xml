@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="0dp"
+    android:gravity="center">
+
+    <!-- Elément contenant la date du départ et l'intitulé "Departure" -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Affichage de "Departure" -->
+            <TextView
+                android:id="@+id/textDepartureDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="0dp"
+                android:text="Departure"
+                android:textSize="16sp" />
+
+            <!-- Date d'aller -->
+            <EditText
+                android:id="@+id/departureDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="xx/xx/xxxx"
+                android:inputType="date"
+                android:focusable="false"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Elément contenant la date du départ et l'intitulé "Return" -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="16dp"
+
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp"
+        android:id="@+id/returnDateBox">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Affichage de "Return" -->
+            <TextView
+                android:id="@+id/textReturnDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Return"
+                android:textSize="16sp"
+                android:paddingTop="0dp" />
+
+            <!-- Date de retour -->
+            <EditText
+                android:id="@+id/returnDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="xx/xx/xxxx"
+                android:inputType="date"
+                android:focusable="false"
+                android:clickable="true"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

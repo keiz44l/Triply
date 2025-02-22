@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.INTERNET"/>
     <!--
     Allows Glide to monitor connectivity status and restart failed requests if users go from a
@@ -19,6 +21,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Triply"
         tools:targetApi="31">
+
+        <activity
+            android:name=".ResultsActivity"
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -32,6 +39,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Add RecapActivity declaration -->
+        <activity
+            android:name=".RecapActivity"
+            android:exported="true" />
     </application>
 
 </manifest>

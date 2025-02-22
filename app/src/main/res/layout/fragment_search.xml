@@ -1,9 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.recyclerview.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/recyclerview_search"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    app:layoutManager="LinearLayoutManager"
-    tools:context=".ui.transform.TransformFragment" />
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="#F9F9F9">
+
+    <!-- Spacer for alignment -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <!-- CardView for input fields -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="6dp"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- From Label -->
+            <TextView
+                android:id="@+id/texteFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="From"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:paddingBottom="6dp"/>
+
+            <!-- From Input Field -->
+            <EditText
+                android:id="@+id/texteSaisieFrom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter origin"
+                android:inputType="text"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="14sp"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp"/>
+
+            <!-- To Label -->
+            <TextView
+                android:id="@+id/texteTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="To"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:paddingBottom="6dp"/>
+
+            <!-- To Input Field -->
+            <EditText
+                android:id="@+id/texteSaisieTo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Enter destination"
+                android:inputType="text"
+                android:background="@drawable/input_background"
+                android:padding="12dp"
+                android:textSize="14sp"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="15dp"/>
+
+    <!-- Side-by-Side Preferences -->
+    <include
+        android:id="@+id/side_by_side_elements"
+        layout="@layout/side_by_side_elements"/>
+
+    <!-- Date Selection -->
+    <include
+        android:id="@+id/dates"
+        layout="@layout/dates"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"/>
+
+    <!-- Centered Validation Button -->
+    <Button
+        android:id="@+id/boutonValider"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Validate"
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#009688"
+        android:padding="12dp"
+        app:cornerRadius="8dp"/>
+</LinearLayout>
